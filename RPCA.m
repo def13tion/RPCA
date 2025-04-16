@@ -3,7 +3,7 @@ function [L, S] = RPCA(M, lambda, tol, max_iter)
     % M         - 输入矩阵（观测数据）
     % lambda    - 权重参数，通常设为 1 / sqrt(max(size(M)))
     % tol       - 收敛阈值，默认值为 1e-7
-    % max_iter  - 最大迭代次数，默认值为 1000
+    % max_iter  - 最大迭代次数，默认值为 10000
 
     if nargin < 2
         lambda = 1 / sqrt(max(size(M)));
@@ -12,7 +12,7 @@ function [L, S] = RPCA(M, lambda, tol, max_iter)
         tol = 1e-7;
     end
     if nargin < 4
-        max_iter = 1000;
+        max_iter = 10000;
     end
 
     % 初始化
